@@ -1,0 +1,19 @@
+@startuml
+start
+:Open Task Manager;
+:Load tasks from LocalStorage;
+if (Add or edit task?) then (yes)
+  :Enter task details;
+  :Validate input;
+  :Save task;
+  :Update LocalStorage;
+else (no)
+  :Search/filter tasks;
+endif
+:Display task list;
+if (Mark completed?) then (yes)
+  :Change status;
+  :Save changes;
+endif
+stop
+@enduml

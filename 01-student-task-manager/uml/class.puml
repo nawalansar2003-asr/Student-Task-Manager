@@ -1,0 +1,21 @@
+@startuml
+class Task {
+  +id: String
+  +title: String
+  +category: String
+  +dueDate: Date
+  +priority: String
+  +description: String
+  +status: String
+}
+class TaskManager {
+  +addTask()
+  +editTask()
+  +deleteTask()
+  +toggleTask()
+  +filterTasks()
+  +save()
+  +render()
+}
+TaskManager "1" o-- "*" Task
+@enduml

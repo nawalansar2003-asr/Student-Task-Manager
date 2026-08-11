@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Task Manager</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div><h1>Student Task Manager</h1><p>Plan assignments. Track deadlines. Finish on time.</p></div>
+  <button id="addTaskBtn" class="primary">+ Add Task</button>
+</header>
+
+<main class="container">
+  <section class="stats">
+    <article><span>Total</span><strong id="totalCount">0</strong></article>
+    <article><span>Pending</span><strong id="pendingCount">0</strong></article>
+    <article><span>Completed</span><strong id="completedCount">0</strong></article>
+    <article><span>High Priority</span><strong id="highCount">0</strong></article>
+  </section>
+
+  <section class="toolbar">
+    <input id="searchInput" type="search" placeholder="Search tasks...">
+    <select id="statusFilter"><option value="all">All Status</option><option value="pending">Pending</option><option value="completed">Completed</option></select>
+    <select id="priorityFilter"><option value="all">All Priorities</option><option value="high">High</option><option value="medium">Medium</option><option value="low">Low</option></select>
+  </section>
+
+  <section id="taskList" class="task-grid"></section>
+  <p id="emptyState" class="empty">No tasks found. Add your first task.</p>
+</main>
+
+<div id="modal" class="modal hidden">
+  <form id="taskForm" class="modal-card">
+    <div class="modal-head"><h2 id="modalTitle">Add Task</h2><button type="button" id="closeModal">×</button></div>
+    <input type="hidden" id="taskId">
+    <label>Task title<input id="title" required maxlength="80"></label>
+    <label>Course / Category<input id="category" required maxlength="50"></label>
+    <div class="two-col">
+      <label>Due date<input id="dueDate" type="date" required></label>
+      <label>Priority<select id="priority"><option>high</option><option selected>medium</option><option>low</option></select></label>
+    </div>
+    <label>Description<textarea id="description" rows="4" maxlength="250"></textarea></label>
+    <button class="primary" type="submit">Save Task</button>
+  </form>
+</div>
+<script src="js/app.js"></script>
+</body>
+</html>

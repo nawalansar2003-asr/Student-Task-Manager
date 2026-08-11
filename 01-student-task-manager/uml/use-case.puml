@@ -1,0 +1,18 @@
+@startuml
+left to right direction
+actor Student
+rectangle "Student Task Manager" {
+  usecase "View Dashboard" as UC1
+  usecase "Add Task" as UC2
+  usecase "Edit Task" as UC3
+  usecase "Delete Task" as UC4
+  usecase "Complete Task" as UC5
+  usecase "Search / Filter Tasks" as UC6
+}
+Student --> UC1
+Student --> UC2
+Student --> UC3
+Student --> UC4
+Student --> UC5
+Student --> UC6
+@enduml
